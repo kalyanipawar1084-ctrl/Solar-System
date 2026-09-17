@@ -1,0 +1,1019 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 15% 15%, rgba(101, 65, 255, .22), transparent 25%),
+        radial-gradient(circle at 85% 25%, rgba(0, 190, 255, .16), transparent 25%),
+        radial-gradient(circle at 50% 100%, rgba(120, 30, 255, .16), transparent 30%),
+        #03050f;
+}
+
+
+/* =========================
+   STAR FIELD
+========================= */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(130,190,255,.6) 1px, transparent 1px);
+
+    background-size: 120px 120px, 190px 190px;
+    background-position: 20px 30px, 70px 100px;
+
+    opacity: .35;
+}
+
+body::after {
+    background:
+        radial-gradient(circle at center, transparent 20%, rgba(0,0,0,.55) 100%);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    min-height: 105px;
+    padding: 22px 42px;
+
+    display: flex;
+    align-items: center;
+    gap: 55px;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    background: rgba(3,5,15,.72);
+    backdrop-filter: blur(18px);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #9da8ff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 4px;
+
+    text-shadow: 0 0 20px rgba(120,130,255,.7);
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: clamp(25px, 3vw, 38px);
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #b9c1ff,
+        #73ddff
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+header p {
+    margin: 7px 0 0;
+    color: #7e88aa;
+    font-size: 13px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    min-height: calc(100vh - 155px);
+
+    display: grid;
+    grid-template-columns: 200px minmax(400px, 1fr) 350px;
+
+    gap: 20px;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   GLASS CARDS
+========================= */
+
+.planet-menu,
+.space-area,
+.information {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.08);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 24px;
+}
+
+
+/* =========================
+   PLANET MENU
+========================= */
+
+.planet-menu {
+    padding: 20px 14px;
+
+    height: fit-content;
+}
+
+.planet-menu h3 {
+    margin: 5px 10px 18px;
+
+    color: #697392;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+
+.planet-menu button {
+
+    width: 100%;
+
+    padding: 13px 12px;
+    margin: 3px 0;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+    background: transparent;
+    color: #aeb6d0;
+
+    font-size: 13px;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+
+.planet-menu button:hover {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(116,105,255,.2),
+            rgba(60,200,255,.06)
+        );
+
+    border-color: rgba(130,140,255,.2);
+
+    transform: translateX(5px);
+
+    box-shadow:
+        0 8px 25px rgba(70,70,255,.12);
+}
+
+
+/* =========================
+   MINI PLANETS
+========================= */
+
+.mini {
+
+    width: 15px;
+    height: 15px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px currentColor;
+}
+
+
+/* =========================
+   SPACE AREA
+========================= */
+
+.space-area {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.space-title {
+
+    padding: 17px 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #68728f;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+
+.live {
+    color: #62f5a5;
+
+    text-shadow:
+        0 0 10px rgba(70,255,150,.8);
+}
+
+
+/* =========================
+   SOLAR SYSTEM
+========================= */
+
+.solar-system {
+
+    position: relative;
+
+    width: min(650px, 90%);
+    aspect-ratio: 1;
+
+    margin: 25px auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   SUN
+========================= */
+
+.sun {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 42px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fffbd0,
+            #ffd13d 35%,
+            #ff8a00 70%
+        );
+
+    box-shadow:
+        0 0 20px #ffd000,
+        0 0 50px rgba(255,160,0,.8),
+        0 0 100px rgba(255,100,0,.4);
+
+    animation: sunPulse 3s ease-in-out infinite;
+
+    z-index: 20;
+}
+
+
+@keyframes sunPulse {
+
+    0%,100% {
+        box-shadow:
+            0 0 20px #ffd000,
+            0 0 50px rgba(255,160,0,.7);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px #fff000,
+            0 0 80px rgba(255,150,0,.9);
+    }
+}
+
+
+/* =========================
+   ORBITS
+========================= */
+
+.orbit {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(140,170,255,.16);
+
+    border-radius: 50%;
+
+    animation: spin 18s linear infinite;
+
+    box-shadow:
+        0 0 15px rgba(100,130,255,.02);
+}
+
+
+.orbit1 { width: 14%; height: 14%; }
+.orbit2 { width: 25%; height: 25%; }
+.orbit3 { width: 36%; height: 36%; }
+.orbit4 { width: 47%; height: 47%; }
+.orbit5 { width: 59%; height: 59%; }
+.orbit6 { width: 71%; height: 71%; }
+.orbit7 { width: 83%; height: 83%; }
+.orbit8 { width: 95%; height: 95%; }
+
+
+@keyframes spin {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================
+   PLANETS
+========================= */
+
+.space-planet {
+
+    position: absolute;
+
+    top: -8px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border: 0;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    z-index: 30;
+}
+
+
+.space-planet:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.7);
+
+    filter:
+        brightness(1.3)
+        drop-shadow(0 0 8px white);
+}
+
+
+/* Mercury */
+
+.mercury {
+    width: 10px;
+    height: 10px;
+
+    background:
+        radial-gradient(circle at 30% 30%, #ddd, #777);
+
+    color: #aaa;
+}
+
+
+/* Venus */
+
+.venus {
+    width: 15px;
+    height: 15px;
+
+    background:
+        radial-gradient(circle at 30% 30%, #ffe0a0, #c27432);
+
+    color: #e0a060;
+}
+
+
+/* Earth */
+
+.earth {
+    width: 18px;
+    height: 18px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #80e8ff,
+            #1683d8 45%,
+            #0b355e
+        );
+
+    color: #46c8ff;
+}
+
+
+/* Mars */
+
+.mars {
+    width: 15px;
+    height: 15px;
+
+    background:
+        radial-gradient(circle at 30% 30%, #ff8060, #9e2e20);
+
+    color: #ff6040;
+}
+
+
+/* Jupiter */
+
+.jupiter {
+    width: 29px;
+    height: 29px;
+
+    background:
+        linear-gradient(
+            #d9a16a 0 18%,
+            #80533b 19% 30%,
+            #edc28e 31% 43%,
+            #9c6948 44% 55%,
+            #d49a66 56% 75%,
+            #754b39 76%
+        );
+
+    color: #d9a16a;
+}
+
+
+/* Saturn */
+
+.saturn {
+    width: 25px;
+    height: 25px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff0a8,
+            #b18c50
+        );
+
+    color: #d8bd79;
+}
+
+
+.saturn::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 43px;
+    height: 11px;
+
+    top: 7px;
+    left: -9px;
+
+    border: 2px solid rgba(225,205,145,.8);
+
+    border-radius: 50%;
+
+    transform: rotate(-15deg);
+}
+
+
+/* Uranus */
+
+.uranus {
+    width: 20px;
+    height: 20px;
+
+    background:
+        radial-gradient(circle at 30% 30%, #c5ffff, #48aebc);
+
+    color: #70e8f0;
+}
+
+
+/* Neptune */
+
+.neptune {
+    width: 20px;
+    height: 20px;
+
+    background:
+        radial-gradient(circle at 30% 30%, #82aaff, #173dba);
+
+    color: #507aff;
+}
+
+
+/* =========================
+   SPEED CONTROLS
+========================= */
+
+.speed-controls {
+
+    padding: 16px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border-top: 1px solid rgba(255,255,255,.07);
+}
+
+
+.speed-controls span {
+
+    margin-right: 10px;
+
+    color: #68728f;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.speed-controls button {
+
+    min-width: 42px;
+
+    padding: 8px 11px;
+
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 9px;
+
+    background: rgba(255,255,255,.05);
+
+    color: #aeb7d4;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.speed-controls button:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d5dfc,
+            #3db9ff
+        );
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px rgba(80,100,255,.25);
+}
+
+
+/* =========================
+   INFORMATION PANEL
+========================= */
+
+.information {
+
+    padding: 25px;
+}
+
+
+.planet-header {
+
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+
+.big-planet {
+
+    width: 62px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 30px currentColor;
+}
+
+
+.planet-header small {
+
+    color: #68728f;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.planet-header h2 {
+
+    margin: 5px 0 0;
+
+    font-size: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            #9aa8ff
+        );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.information > p {
+
+    color: #929bb8;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin: 18px 0;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+}
+
+
+.stat {
+
+    padding: 13px;
+
+    min-height: 70px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    transition: .2s;
+}
+
+
+.stat:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(130,150,255,.3);
+
+    background:
+        rgba(100,100,255,.08);
+}
+
+
+.stat span {
+
+    display: block;
+
+    font-size: 16px;
+
+    margin-bottom: 7px;
+}
+
+
+.stat small {
+
+    display: block;
+
+    color: #68728f;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+
+.stat strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #dce1f4;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   SPACE FACT
+========================= */
+
+.fact-box {
+
+    margin-top: 15px;
+
+    padding: 17px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(109,93,252,.18),
+            rgba(45,200,255,.08)
+        );
+
+    border: 1px solid rgba(130,140,255,.2);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.fact-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -40px;
+    top: -40px;
+
+    border-radius: 50%;
+
+    background: #756cff;
+
+    filter: blur(45px);
+
+    opacity: .25;
+}
+
+
+.fact-box strong {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.fact-box p {
+
+    color: #bac1da;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+.fact-box button {
+
+    border: 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    color: #8f9cff;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.fact-box button:hover {
+
+    color: white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    min-height: 55px;
+
+    padding: 0 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid rgba(255,255,255,.06);
+
+    color: #555f7d;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 1100px) {
+
+    main {
+
+        grid-template-columns:
+            170px
+            minmax(350px, 1fr);
+    }
+
+    .information {
+
+        grid-column: 1 / -1;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+
+        position: relative;
+
+        display: block;
+
+        padding: 20px;
+    }
+
+    .logo {
+
+        margin-bottom: 12px;
+    }
+
+    main {
+
+        display: block;
+
+        padding: 12px;
+    }
+
+    .planet-menu {
+
+        margin-bottom: 15px;
+    }
+
+    .planet-menu button {
+
+        display: inline-flex;
+
+        width: 48%;
+    }
+
+    .space-area {
+
+        margin-bottom: 15px;
+    }
+
+    .information {
+
+        margin-bottom: 15px;
+    }
+
+    .stats {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer {
+
+        padding: 15px;
+
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .solar-system {
+
+        width: 96%;
+    }
+
+    .stats {
+
+        grid-template-columns: 1fr;
+    }
+
+    .speed-controls {
+
+        flex-wrap: wrap;
+    }
+
+    .speed-controls span {
+
+        width: 100%;
+
+        text-align: center;
+
+        margin: 0 0 7px;
+    }
+}

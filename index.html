@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cosmic Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">✦ COSMIC EXPLORER</div>
+
+        <div>
+            <h1>Our Solar System</h1>
+            <p>Explore the worlds orbiting our Sun</p>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- LEFT SIDE -->
+        <aside class="planet-menu">
+
+            <h3>PLANETS</h3>
+
+            <button onclick="showPlanet('Mercury')">
+                <span class="mini mercury"></span>
+                Mercury
+            </button>
+
+            <button onclick="showPlanet('Venus')">
+                <span class="mini venus"></span>
+                Venus
+            </button>
+
+            <button onclick="showPlanet('Earth')">
+                <span class="mini earth"></span>
+                Earth
+            </button>
+
+            <button onclick="showPlanet('Mars')">
+                <span class="mini mars"></span>
+                Mars
+            </button>
+
+            <button onclick="showPlanet('Jupiter')">
+                <span class="mini jupiter"></span>
+                Jupiter
+            </button>
+
+            <button onclick="showPlanet('Saturn')">
+                <span class="mini saturn"></span>
+                Saturn
+            </button>
+
+            <button onclick="showPlanet('Uranus')">
+                <span class="mini uranus"></span>
+                Uranus
+            </button>
+
+            <button onclick="showPlanet('Neptune')">
+                <span class="mini neptune"></span>
+                Neptune
+            </button>
+
+        </aside>
+
+
+        <!-- CENTER -->
+        <section class="space-area">
+
+            <div class="space-title">
+                <span>LIVE ORBIT VIEW</span>
+                <span class="live">● LIVE</span>
+            </div>
+
+            <div class="solar-system">
+
+                <div class="sun">☀</div>
+
+                <div class="orbit orbit1">
+                    <button class="space-planet mercury"
+                            onclick="showPlanet('Mercury')"></button>
+                </div>
+
+                <div class="orbit orbit2">
+                    <button class="space-planet venus"
+                            onclick="showPlanet('Venus')"></button>
+                </div>
+
+                <div class="orbit orbit3">
+                    <button class="space-planet earth"
+                            onclick="showPlanet('Earth')"></button>
+                </div>
+
+                <div class="orbit orbit4">
+                    <button class="space-planet mars"
+                            onclick="showPlanet('Mars')"></button>
+                </div>
+
+                <div class="orbit orbit5">
+                    <button class="space-planet jupiter"
+                            onclick="showPlanet('Jupiter')"></button>
+                </div>
+
+                <div class="orbit orbit6">
+                    <button class="space-planet saturn"
+                            onclick="showPlanet('Saturn')"></button>
+                </div>
+
+                <div class="orbit orbit7">
+                    <button class="space-planet uranus"
+                            onclick="showPlanet('Uranus')"></button>
+                </div>
+
+                <div class="orbit orbit8">
+                    <button class="space-planet neptune"
+                            onclick="showPlanet('Neptune')"></button>
+                </div>
+
+            </div>
+
+
+            <div class="speed-controls">
+                <span>ORBIT SPEED</span>
+
+                <button onclick="setSpeed(0.5)">0.5×</button>
+                <button onclick="setSpeed(1)">1×</button>
+                <button onclick="setSpeed(2)">2×</button>
+                <button onclick="pauseSystem()">⏸</button>
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <section class="information">
+
+            <div class="planet-header">
+
+                <div id="planetIcon" class="big-planet earth"></div>
+
+                <div>
+                    <small>SELECTED WORLD</small>
+                    <h2 id="planetName">Earth</h2>
+                </div>
+
+            </div>
+
+
+            <p id="description">
+                Earth is our home planet and the only known world
+                with life.
+            </p>
+
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span>📏</span>
+                    <small>DISTANCE FROM SUN</small>
+                    <strong id="distance">149.6 million km</strong>
+                </div>
+
+                <div class="stat">
+                    <span>🌙</span>
+                    <small>MOONS</small>
+                    <strong id="moons">1</strong>
+                </div>
+
+                <div class="stat">
+                    <span>🌡️</span>
+                    <small>AVERAGE TEMP.</small>
+                    <strong id="temperature">15°C</strong>
+                </div>
+
+                <div class="stat">
+                    <span>📅</span>
+                    <small>ONE YEAR</small>
+                    <strong id="year">365 days</strong>
+                </div>
+
+                <div class="stat">
+                    <span>🪨</span>
+                    <small>PLANET TYPE</small>
+                    <strong id="type">Rocky Planet</strong>
+                </div>
+
+            </div>
+
+
+            <div class="fact-box">
+
+                <div>
+                    <span>✦</span>
+                    <strong>SPACE FACT</strong>
+                </div>
+
+                <p id="factText">
+                    Earth travels around the Sun at about
+                    107,000 km/h.
+                </p>
+
+                <button onclick="randomFact()">
+                    Discover another fact →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <span>✦ COSMIC EXPLORER</span>
+        <span>Explore • Discover • Learn</span>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
